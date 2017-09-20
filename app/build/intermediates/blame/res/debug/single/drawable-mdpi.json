@@ -10,5 +10,9 @@
     {
         "merged": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
         "source": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "H:\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "H:\\lab03-skeleton\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]

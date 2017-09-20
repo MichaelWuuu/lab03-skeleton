@@ -1,5 +1,6 @@
 package course.labs.activitylab;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +24,7 @@ public class ActivityOne extends Activity {
 		private int onStopCount = 0;
 		private int onRestartCount = 0;
 		private int onDestroyCount = 0;
+		private SharedPreferences prefs;
 		
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +50,20 @@ public class ActivityOne extends Activity {
 //				onRestartCount = savedInstanceState.getInt("restart");
 //				onDestroyCount = savedInstanceState.getInt("destroy");
 //			}
+
+			prefs = getPreferences(MODE_PRIVATE);
+
+			onCreateCount = prefs.getInt("create", 0);
+			onStopCount = prefs.getInt("stop", 0);
+			onResumeCount = prefs.getInt("resume", 0);
+			onPauseCount = prefs.getInt("pause", 0);
+			onStopCount = prefs.getInt("stop", 0);
+			onRestartCount = prefs.getInt("restart", 0);
+			onDestroyCount = prefs.getInt("destroy", 0);
+
 			
 			//TODO: update the appropriate count variable & update the view
 			onCreateCount++;
-			TextView tv = (TextView) findViewById(R.id.create);
-			tv.setText(getString(R.string.onCreate) + onCreateCount);
 		}
 
 		@Override
@@ -73,8 +84,6 @@ public class ActivityOne extends Activity {
 			
 			//TODO:  update the appropriate count variable & update the view
 			onStartCount++;
-			TextView tv = (TextView) findViewById(R.id.start);
-			tv.setText(getString(R.string.onStart) + onStartCount);
 		}
 
 	    // TODO: implement 5 missing lifecycle callback methods
@@ -84,10 +93,9 @@ public class ActivityOne extends Activity {
 			super.onResume();
 
 			Log.i(TAG, "onResume called");
+			displayCount();
 
 			onResumeCount++;
-			TextView tv = (TextView) findViewById(R.id.resume);
-			tv.setText(getString(R.string.onResume) + onResumeCount);
 		}
 
 		@Override
@@ -108,8 +116,18 @@ public class ActivityOne extends Activity {
 			Log.i(TAG, "onStop called");
 
 			onStopCount++;
-			TextView tv = (TextView) findViewById(R.id.stop);
-			tv.setText(getString(R.string.onStop) + onStopCount);
+
+			SharedPreferences.Editor editor = prefs.edit();
+
+			editor.putInt("create", onCreateCount);
+			editor.putInt("start", onStartCount);
+			editor.putInt("resume", onResumeCount);
+			editor.putInt("pause", onPauseCount);
+			editor.putInt("stop", onStopCount);
+			editor.putInt("restart", onRestartCount);
+			editor.putInt("destroy", onDestroyCount);
+
+			editor.commit();
 		}
 
 		@Override
@@ -119,8 +137,7 @@ public class ActivityOne extends Activity {
 			Log.i(TAG, "onRestart called");
 
 			onRestartCount++;
-			TextView tv = (TextView) findViewById(R.id.restart);
-			tv.setText(getString(R.string.onRestart) + onRestartCount);
+
 		}
 
 		@Override
@@ -130,36 +147,51 @@ public class ActivityOne extends Activity {
 			Log.i(TAG, "onDestroy called");
 
 			onDestroyCount++;
-			TextView tv = (TextView) findViewById(R.id.destroy);
-			tv.setText(getString(R.string.onDestroy) + onDestroyCount);
 		}
 
-		@Override
-		public void onSaveInstanceState(Bundle savedInstanceState){
-			//TODO:  save state information with a collection of key-value pairs & save all  count variables
-			super.onSaveInstanceState(savedInstanceState);
-			// save counters
-			savedInstanceState.putInt("create", onCreateCount);
-			savedInstanceState.putInt("start", onStartCount);
-			savedInstanceState.putInt("resume", onResumeCount);
-			savedInstanceState.putInt("pause", onPauseCount);
-			savedInstanceState.putInt("stop", onStopCount);
-			savedInstanceState.putInt("restart", onRestartCount);
-			savedInstanceState.putInt("destroy", onDestroyCount);
+		private void displayCount() {
+			TextView tv = (TextView) findViewById(R.id.create);
+			tv.setText(getString(R.string.onCreate) + onCreateCount);
+			TextView tv1 = (TextView) findViewById(R.id.start);
+			tv1.setText(getString(R.string.onStart) + onStartCount);
+			TextView tv2 = (TextView) findViewById(R.id.resume);
+			tv2.setText(getString(R.string.onResume) + onResumeCount);
+			TextView tv3 = (TextView) findViewById(R.id.pause);
+			tv3.setText(getString(R.string.onPause) + onPauseCount);
+			TextView tv4 = (TextView) findViewById(R.id.stop);
+			tv4.setText(getString(R.string.onStop) + onStopCount);
+			TextView tv5 = (TextView) findViewById(R.id.restart);
+			tv5.setText(getString(R.string.onRestart) + onRestartCount);
+			TextView tv6 = (TextView) findViewById(R.id.destroy);
+			tv6.setText(getString(R.string.onDestroy) + onDestroyCount);
 		}
 
-		@Override
-		public void onRestoreInstanceState(Bundle savedInstanceState) {
-			super.onRestoreInstanceState(savedInstanceState);
-
-			onCreateCount = savedInstanceState.getInt("create");
-			onStopCount = savedInstanceState.getInt("start");
-			onResumeCount = savedInstanceState.getInt("resume");
-			onPauseCount = savedInstanceState.getInt("pause");
-			onStopCount = savedInstanceState.getInt("stop");
-			onRestartCount = savedInstanceState.getInt("restart");
-			onDestroyCount = savedInstanceState.getInt("destroy");
-		}
+//		@Override
+//		public void onSaveInstanceState(Bundle savedInstanceState){
+//			//TODO:  save state information with a collection of key-value pairs & save all  count variables
+//			super.onSaveInstanceState(savedInstanceState);
+//			// save counters
+//			savedInstanceState.putInt("create", onCreateCount);
+//			savedInstanceState.putInt("start", onStartCount);
+//			savedInstanceState.putInt("resume", onResumeCount);
+//			savedInstanceState.putInt("pause", onPauseCount);
+//			savedInstanceState.putInt("stop", onStopCount);
+//			savedInstanceState.putInt("restart", onRestartCount);
+//			savedInstanceState.putInt("destroy", onDestroyCount);
+//		}
+//
+//		@Override
+//		public void onRestoreInstanceState(Bundle savedInstanceState) {
+//			super.onRestoreInstanceState(savedInstanceState);
+//
+//			onCreateCount = savedInstanceState.getInt("create");
+//			onStopCount = savedInstanceState.getInt("start");
+//			onResumeCount = savedInstanceState.getInt("resume");
+//			onPauseCount = savedInstanceState.getInt("pause");
+//			onStopCount = savedInstanceState.getInt("stop");
+//			onRestartCount = savedInstanceState.getInt("restart");
+//			onDestroyCount = savedInstanceState.getInt("destroy");
+//		}
 
 
 		public void launchActivityTwo(View view) {

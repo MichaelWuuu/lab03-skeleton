@@ -8,7 +8,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="H:\git_repo\lab03-skeleton\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_c48f9360652fd5d16eb3c7207b95e0c6e33225cc.jar" />
+        <dex dex="H:\lab03-skeleton\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_c48f9360652fd5d16eb3c7207b95e0c6e33225cc.jar" />
     </item>
 
 </items>

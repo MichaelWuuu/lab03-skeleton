@@ -10,5 +10,9 @@
     {
         "merged": "H:\\android_lab3\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
         "source": "H:\\android_lab3\\lab03-skeleton\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "H:\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "H:\\lab03-skeleton\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     }
 ]

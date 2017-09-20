@@ -38,5 +38,13 @@
     {
         "merged": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_one.xml",
         "source": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\src\\main\\res\\layout\\activity_one.xml"
+    },
+    {
+        "merged": "H:\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_one.xml",
+        "source": "H:\\lab03-skeleton\\app\\src\\main\\res\\layout\\activity_one.xml"
+    },
+    {
+        "merged": "H:\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_two.xml",
+        "source": "H:\\lab03-skeleton\\app\\src\\main\\res\\layout\\activity_two.xml"
     }
 ]
