@@ -1,6 +1,14 @@
 [
     {
+        "merged": "H:\\git_repo\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
+        "source": "H:\\git_repo\\lab03-skeleton\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
         "source": "C:\\Users\\owner\\gitstuff\\lab03-skeleton\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "H:\\android_lab3\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
+        "source": "H:\\android_lab3\\lab03-skeleton\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     }
 ]
